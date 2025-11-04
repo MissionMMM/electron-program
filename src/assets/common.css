@@ -1,0 +1,45 @@
+:root {
+  --common-color-1: #505050;
+  --common-color-2: #000;
+  --common-color-3: #39313a;
+}
+
+.common-color-1{
+    background-color: var(--common-color-3);
+    color: #fff;
+    text-shadow: 0px 0px 5px var(--common-color-2);
+}
+/* 隐藏所有滚动条 */
+::-webkit-scrollbar {
+  display: none;
+}
+/* 全局修改所有 Ant Design 输入框的激活边框颜色 */
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper-focused {
+  border-color: var(--common-color-1) !important;
+  box-shadow: 0 0 0 2px var(--common-color-2) !important;
+}
+
+.ant-input:hover {
+  border-color: var(--common-color-1)!important;
+}
+
+/* 选择器激活状态 */
+.ant-select-focused .ant-select-selector {
+  border-color: var(--common-color-1) !important;
+  box-shadow: 0 0 0 2px var(--common-color-2) !important;
+}
+
+/* 日期选择器激活状态 */
+.ant-picker-focused {
+  border-color: var(--common-color-1) !important;
+  box-shadow: 0 0 0 2px var(--common-color-2) !important;
+}
+
+/* 文本域激活状态 */
+.ant-input-textarea:focus,
+.ant-input-textarea-focused {
+  border-color: var(--common-color-1) !important;
+  box-shadow: 0 0 0 2px var(--common-color-2) !important;
+}

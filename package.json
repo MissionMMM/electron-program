@@ -1,0 +1,79 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "自用办工型Electron应用",
+  "main": "main.js",
+  "author": "yqt17775927630@gmail.com",
+  "homepage": "./",
+  "scripts": {
+    "start": "electron .",
+    "dev": "webpack serve --mode development --host 0.0.0.0",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "electron-dev": "concurrently -k \"npm run dev\" \"wait-on http://localhost:8080 && cross-env NODE_ENV=development ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .\"",
+    "dist": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.example.yourapp",
+    "productName": "个人工作台",
+    "copyright": "Copyright © 2025 Your Company",
+    "directories": {
+      "output": "release"
+    },
+    "compression": "maximum",
+    "asar": true,
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/icon2.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "electronDownload": {
+      "mirror": "https://npmmirror.com/mirrors/electron/"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "buffer": "^6.0.3",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "css-loader": "^7.1.2",
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.4",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "style-loader": "^4.0.0",
+    "url-loader": "^4.1.1",
+    "util": "^0.12.5",
+    "vue-loader": "^17.4.2",
+    "wait-on": "^9.0.1",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.5.22",
+    "ant-design-vue": "^4.2.6",
+    "assert": "^2.1.0",
+    "axios": "^1.13.1",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
+  }
+}
