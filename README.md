@@ -32,6 +32,12 @@ npm run electron-dev
 npm run dist
 ```
 
+首先会先构建Vue的dist安装包
+
+然后再生成release释放包，此时这个包里包含了安装文件.exe和直接执行文件win-unpacked
+
+目前只在win环境有测试
+
 已经解决所有问题并能完美运行。后续开发持续推进中
 
 ## 文件说明
